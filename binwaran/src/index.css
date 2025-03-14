@@ -11,12 +11,78 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* ให้วีดีโออยู่ข้างหลังเนื้อหา */
+}
+
+.text-neon {
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  color: #ff00ff;
+  text-shadow: 
+    0 0 5px #ff00ff, 
+    0 0 10px #ff00ff, 
+    0 0 20px #ff00ff, 
+    0 0 40px #ff0099, 
+    0 0 80px #ff0099;
+  transition: all 0.2s ease-in-out;
+}
+
+.text-neon:hover {
+  text-shadow: 
+    0 0 10px #ff00ff, 
+    0 0 20px #ff00ff, 
+    0 0 30px #ff00ff, 
+    0 0 50px #ff0099, 
+    0 0 100px #ff0099;
+}
+
+/* ทำให้ MENU ของ Mobile มี Animation เลื่อนเข้ามา */
+@media (max-width: 1024px) {
+  .mobile-menu {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@layer utilities {
+  .text-neon {
+    color: #ff00ff;
+    text-shadow: 0px 0px 8px #ff00ff, 0px 0px 16px #ff00ff;
+  }
+
+
+  .bg-neonPink {
+    background: linear-gradient(90deg, #ff007f, #ff00ff);
+    box-shadow: 0px 0px 15px #ff00ff;
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+               0 0 20px rgba(255, 255, 255, 0.6),
+               0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 a {
