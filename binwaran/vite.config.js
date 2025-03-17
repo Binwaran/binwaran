@@ -8,6 +8,9 @@ export default defineConfig({
     port: 5173, // หรือ 5174 ตามที่ Vite ใช้
   },
   build: {
-    outDir: 'dist', // ✅ บอกให้ Vite สร้างไฟล์ในโฟลเดอร์ dist
+    outDir: 'dist', 
+    rollupOptions: {
+      input: "index.html",
+    },
   },
 });
