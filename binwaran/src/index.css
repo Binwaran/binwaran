@@ -138,3 +138,23 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Glow Effect สำหรับไอคอน */
+.neon-icon {
+  filter: drop-shadow(0 0 5px #00ffff);
+  transition: all 0.3s ease-in-out;
+}
+.neon-icon:hover {
+  filter: drop-shadow(0 0 10px #00ffff) brightness(150%);
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+

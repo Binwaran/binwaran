@@ -13,28 +13,31 @@ import Article from "./pages/Article";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
+import Footer from "./components/Footer";
 
 
 function App() {
   return (
     <Router> {/* Router ต้องเป็นตัวครอบหลัก */}
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/techstack" element={<TechStack />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<AdminPanel />} />
-        <Route path="/article" element={<Article />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/notifications" element={<Notifications/>} />
-      </Routes>
-      <Home />
-     
+      <main className="content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/techstack" element={<TechStack />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/article" element={<Article />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/notifications" element={<Notifications/>} />
+        </Routes>
+      </main>
+      <Footer />
     </Router>
   );
 }
